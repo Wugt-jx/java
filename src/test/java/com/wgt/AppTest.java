@@ -4,6 +4,8 @@ import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 
+import java.util.LinkedList;
+
 /**
  * Unit test for simple App.
  */
@@ -34,5 +36,12 @@ public class AppTest
     public void testApp()
     {
         assertTrue( true );
+    }
+
+    public void test(){
+        LinkedList<Integer>linkedList=new LinkedList<Integer>();
+        linkedList.add(123);
+        linkedList.remove(Integer.parseInt("123"));
+        System.out.println(linkedList);
     }
 }

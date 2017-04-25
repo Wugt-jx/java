@@ -2,6 +2,7 @@ package com.wgt.list;
 
 /**
  * 继承链表类实现排序
+ * @author wgt
  * @param <T>
  */
 public class SortedLinkedList<T extends Comparable<T>> extends LinkedList<T> {

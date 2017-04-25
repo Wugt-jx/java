@@ -15,6 +15,7 @@ public class SortedLinkedListTest extends TestCase {
         linkedList.add(78);
         linkedList.add(98);
         linkedList.add(11);
+        linkedList.add(1,23);
         System.out.println(linkedList);
         linkedList.remove(new Integer(23));
         System.out.println(linkedList);

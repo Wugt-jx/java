@@ -1,5 +1,6 @@
 package com.wgt.list;
 
+
 /**
  * 双向链表，类似与java.util.LinkedList类
  * @author wgt

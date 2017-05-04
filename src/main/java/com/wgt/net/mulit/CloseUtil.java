@@ -1,4 +1,4 @@
-package com.wgt.net;
+package com.wgt.net.mulit;
 
 import java.io.Closeable;
 import java.io.IOException;

@@ -1,4 +1,4 @@
-package com.wgt.net;
+package com.wgt.net.mulit;
 
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
@@ -9,20 +9,23 @@ import java.net.Socket;
 /**
  * Created by Administrator on 2017/5/3.
  */
-public class SendThread implements Runnable {
+public class
+SendThread implements Runnable {
 
     private BufferedReader console;
     private DataOutputStream dos;
     private boolean isRunnable = true;
-
+    private String name;
     /**
      * 构造发送线程体
      * @param socket
      */
-    public SendThread(Socket socket) {
+    public SendThread(Socket socket,String name) {
         console= new BufferedReader(new InputStreamReader(System.in));
         try {
             dos = new DataOutputStream(socket.getOutputStream());
+            this.name=name;
+            send(this.name);
         } catch (IOException e) {
             //e.printStackTrace();
             isRunnable=false;
@@ -33,7 +36,7 @@ public class SendThread implements Runnable {
 
     public void run() {
         while (isRunnable){
-            send();
+            send(getMessage());
         }
     }
 
@@ -48,8 +51,7 @@ public class SendThread implements Runnable {
     }
 
     //将获取到的信息打包发送
-    public void send(){
-        String msg = getMessage();
+    public void send(String msg){
         if (null!=msg&&!"".equals(msg)){
             try {
                 dos.writeUTF(msg);
